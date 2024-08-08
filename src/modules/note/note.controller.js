@@ -4,7 +4,7 @@ import jwt, { decode } from 'jsonwebtoken'
 /*
 
 find() -> []
-findOne() -> {} | null lw fadya btb3t awl obj y2ablny, momken filter {__id:''}, return object {}, lw fady b return null
+findOne() -> {} 
  */
 const addNote = async (req,res) =>{
 
@@ -17,7 +17,6 @@ const addNote = async (req,res) =>{
 
 //get methode has no body
 const getAllNotes = async (req,res) =>{
-   
     let notes = await Note.find({user:req.user.userId})
     res.status(200).json({message:"success",notes})
 }
@@ -48,17 +47,4 @@ export{
 
 
 
-//1-findByIdAndUpdate
-//2-findOneAndUpdate
-//3-findOneAndReplace
 
-//4-updateOne
-//5-updateMany
-//6-replaceOne
-
-
-
-//1-findOneAndDelete
-//2-findByIdAndDelete
-//3-deleteOne
-//4-deleteMany
